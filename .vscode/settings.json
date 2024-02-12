@@ -1,0 +1,9 @@
+{
+    "vsicons.projectDetection.autoReload": true,
+    "vsicons.projectDetection.disableDetect": false,
+    "vsicons.projectDetection.autoReload": true,
+    "vsicons.projectDetection.autoDetect": true,
+    "vsicons.associations.files": [
+        { "icon": "convert.ico", "extensions": ["exe"] }
+    ]
+}
