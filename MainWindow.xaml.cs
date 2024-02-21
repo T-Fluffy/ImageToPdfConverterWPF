@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,7 +19,10 @@ namespace ImageToPdfConverterWPF
         private string? outputPdfFile;
         public MainWindow()
         {
+            this.Icon = new System.Windows.Media.Imaging.BitmapImage(new Uri("./convert.ico", UriKind.RelativeOrAbsolute));
+
             InitializeComponent();
+
         }
 
         private void SelectImagesFolder_Click(object sender, RoutedEventArgs e)

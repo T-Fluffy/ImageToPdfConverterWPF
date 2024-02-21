@@ -945,11 +945,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git projects\\ImageToPdfConverterWPF\\ImageToPdfConverterWPF.csproj",
+      "projectUniqueName": "D:\\.NET_Projects\\ImageToPdfConverterWPF\\ImageToPdfConverterWPF.csproj",
       "projectName": "ImageToPdfConverterWPF",
-      "projectPath": "D:\\Git projects\\ImageToPdfConverterWPF\\ImageToPdfConverterWPF.csproj",
+      "projectPath": "D:\\.NET_Projects\\ImageToPdfConverterWPF\\ImageToPdfConverterWPF.csproj",
       "packagesPath": "C:\\Users\\tarek\\.nuget\\packages\\",
-      "outputPath": "D:\\Git projects\\ImageToPdfConverterWPF\\obj\\",
+      "outputPath": "D:\\.NET_Projects\\ImageToPdfConverterWPF\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tarek\\AppData\\Roaming\\NuGet\\NuGet.Config",

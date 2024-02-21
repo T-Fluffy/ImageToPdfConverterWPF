@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NJiHdfFrFcOVHCmlD1+nsxyrYBqSdwVfBe0b24/1mKCqKNq361i0tHibuAjlVOsFhRh9zMRiBd7c3fAg5MMyMA==",
+  "dgSpecHash": "gtN8h+rZZZNdw8mSeEx8ibn3zdqBHxbHs3Uw/vEP+PiKLLuuUsfK1myD2lwCvASzvctcUVR04q1qLhBi1G7GJQ==",
   "success": true,
-  "projectFilePath": "D:\\Git projects\\ImageToPdfConverterWPF\\ImageToPdfConverterWPF.csproj",
+  "projectFilePath": "D:\\.NET_Projects\\ImageToPdfConverterWPF\\ImageToPdfConverterWPF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tarek\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
     "C:\\Users\\tarek\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
