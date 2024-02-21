@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\DotNetProjects\ImageToPdfConverterWPF\obj\Debug\net7.0-windows\
+D:\Git projects\ImageToPdfConverterWPF\obj\Debug\net7.0-windows\
 ImageToPdfConverterWPF
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-D:\DotNetProjects\ImageToPdfConverterWPF\App.xaml
+D:\Git projects\ImageToPdfConverterWPF\App.xaml
 11407045341
 
 3-1233169557
-2171502182985
+217259503302
 MainWindow.xaml;
 
 False

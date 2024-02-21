@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ImageToPdfConverterWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="240" Width="800">
-    <Grid Margin="20" Background="Black">
+        Title="MainWindow" Height="250" Width="700">
+        <Window.Resources>
+        <Style TargetType="Button" x:Key="CustomButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="1"> <!-- Set the corner radius to make it rounded -->
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="20" Background="PaleGreen">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -17,15 +34,55 @@
         </Grid.RowDefinitions>
 
         
-        <TextBlock Grid.Row="1" Text="Selected Images Folder:" VerticalAlignment="Center" Foreground="White" Margin="10,0,0,0"/>
+        <TextBlock Grid.Row="1" Text="Selected Images Folder:" VerticalAlignment="Center" Foreground="#FF000000" Margin="10,0,0,0"/>
         <TextBox x:Name="ImagesFolderPathTextBox" Grid.Row="1" Margin="140,0,0,0" VerticalAlignment="Center" IsReadOnly="True"/>
-        <Button Content="Select Images Folder" Grid.Row="2" Click="SelectImagesFolder_Click" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+        <Button Content=" Select Images Folder " 
+                Grid.Row="2" 
+                Click="SelectImagesFolder_Click" 
+                HorizontalAlignment="Center" 
+                Background="LightBlue"
+                Foreground="White"
+                BorderBrush="DarkBlue"
+                BorderThickness="1"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Style="{StaticResource CustomButtonStyle}" 
+                Margin="0,10,0,10"
+                MouseEnter="Button_MouseEnter"
+                MouseLeave="Button_MouseLeave"/>
 
         
-        <TextBlock Grid.Row="3" Text="Output PDF Path:" VerticalAlignment="Center" Foreground="White" Margin="10,0,0,0"/>
+        <TextBlock Grid.Row="3" Text="Output PDF Path:" VerticalAlignment="Center" Foreground="#FF000000" Margin="10,0,0,0"/>
         <TextBox x:Name="OutputPdfPathTextBox" Grid.Row="3" Margin="140,0,0,0" VerticalAlignment="Center" IsReadOnly="True"/>
-        <Button Content="Select Output Folder" Click="SelectOutputFolder_Click" Grid.Row="4" HorizontalAlignment="Center" Margin="0,10,0,10"/>
 
-        <Button Content="Convert to PDF" Click="ConvertToPdf_Click" Grid.Row="5" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        <Button Content=" Select Output Folder " 
+                Click="SelectOutputFolder_Click" 
+                Grid.Row="4" 
+                HorizontalAlignment="Center" 
+                Background="LightBlue"
+                Foreground="White"
+                BorderBrush="DarkBlue"
+                BorderThickness="1"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Style="{StaticResource CustomButtonStyle}" 
+                Margin="0,10,0,10"
+                MouseEnter="Button_MouseEnter"
+                MouseLeave="Button_MouseLeave"/>
+
+        <Button Content=" Convert to PDF " 
+                Click="ConvertToPdf_Click" 
+                Grid.Row="5" 
+                HorizontalAlignment="Center" 
+                Background="LightBlue"
+                Foreground="White"
+                BorderBrush="DarkBlue"
+                BorderThickness="1"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Style="{StaticResource CustomButtonStyle}"
+                Margin="0,20,0,0" 
+                MouseEnter="Button_MouseEnter"
+                MouseLeave="Button_MouseLeave"/>
     </Grid>
 </Window>

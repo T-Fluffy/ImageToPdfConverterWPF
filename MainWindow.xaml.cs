@@ -1,6 +1,8 @@
 ﻿using System.Drawing;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using Microsoft.Win32;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -19,7 +21,7 @@ namespace ImageToPdfConverterWPF
             InitializeComponent();
         }
 
-         private void SelectImagesFolder_Click(object sender, RoutedEventArgs e)
+        private void SelectImagesFolder_Click(object sender, RoutedEventArgs e)
         {
             var dialog = new OpenFileDialog();
             dialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All Files|*.*";
@@ -28,6 +30,7 @@ namespace ImageToPdfConverterWPF
                 inputFolder = Path.GetDirectoryName(dialog.FileName);
                 ImagesFolderPathTextBox.Text = inputFolder;
             }
+
         }
 
         private void SelectOutputFolder_Click(object sender, RoutedEventArgs e)
@@ -47,7 +50,7 @@ namespace ImageToPdfConverterWPF
                 MessageBox.Show("Please select input folder and output PDF file first.");
                 return;
             }
-            
+
             // ConvertToPdf logic
             string[] imageFiles = Directory.GetFiles(inputFolder, "*.png");
 
@@ -70,7 +73,20 @@ namespace ImageToPdfConverterWPF
             }
 
             // Implement logic for converting images to PDF using inputFolder and outputPdfFile
-            MessageBox.Show("Conversion logic implemented the specific output folder.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("PDF conversion done successfully !.", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+        private void Button_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Button button = (Button)sender;
+            button.Background = System.Windows.Media.Brushes.Blue; // Change the background color when hovered over
+        }
+
+        private void Button_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Button button = (Button)sender;
+            button.Background = System.Windows.Media.Brushes.LightBlue; // Change the background color back to the original color when mouse leaves
+        }
+
+
     }
 }
