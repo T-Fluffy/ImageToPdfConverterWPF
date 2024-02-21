@@ -1,5 +1,9 @@
 # ImageToPdfConverterWPF
 
+![dotnet](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Csharp](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white)
+![Vscode](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+
 This is a WPF application using Dotnet7 with vs_code to convert images into a pdf file. It was created to play around with the dotnet WPF development technology and to discover its options for creating a useful tool.
 This tool is very useful and can be further improved.
 

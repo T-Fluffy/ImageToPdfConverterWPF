@@ -6,15 +6,20 @@
         xmlns:local="clr-namespace:ImageToPdfConverterWPF"
         mc:Ignorable="d"
         Title="ImageToPdfConverter" Height="250" Width="700">
-        <Window.Resources>
+    <!-- Define a resource section for reusable styles -->
+    <Window.Resources>
+        <!-- Define a custom style for buttons -->
         <Style TargetType="Button" x:Key="CustomButtonStyle">
             <Setter Property="Template">
                 <Setter.Value>
+                    <!-- Define a template for the button -->
                     <ControlTemplate TargetType="Button">
+                        <!-- Apply a border with specific properties -->
                         <Border Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="1"> <!-- Set the corner radius to make it rounded -->
+                            <!-- Place the button content in the center -->
                             <ContentPresenter HorizontalAlignment="Center"
                                               VerticalAlignment="Center"/>
                         </Border>
@@ -23,19 +28,23 @@
             </Setter>
         </Style>
     </Window.Resources>
+    <!-- Define the main layout grid -->
     <Grid Margin="20" Background="PaleGreen">
+        <!-- Define rows for layout -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/> <!-- Auto-sized row -->
+            <RowDefinition Height="Auto"/> <!-- Auto-sized row -->
+            <RowDefinition Height="Auto"/> <!-- Auto-sized row -->
+            <RowDefinition Height="Auto"/> <!-- Auto-sized row -->
+            <RowDefinition Height="Auto"/> <!-- Auto-sized row -->
+            <RowDefinition Height="Auto"/> <!-- Auto-sized row -->
         </Grid.RowDefinitions>
 
-        
+        <!-- Text block for displaying selected images folder -->
         <TextBlock Grid.Row="1" Text="Selected Images Folder:" VerticalAlignment="Center" Foreground="#FF000000" Margin="10,0,0,0"/>
+        <!-- Text box for displaying selected images folder path -->
         <TextBox x:Name="ImagesFolderPathTextBox" Grid.Row="1" Margin="140,0,0,0" VerticalAlignment="Center" IsReadOnly="True"/>
+        <!-- Button for selecting images folder -->
         <Button Content=" Select Images Folder " 
                 Grid.Row="2" 
                 Click="SelectImagesFolder_Click" 
@@ -51,10 +60,12 @@
                 MouseEnter="Button_MouseEnter"
                 MouseLeave="Button_MouseLeave"/>
 
-        
+        <!-- Text block for displaying output PDF path -->
         <TextBlock Grid.Row="3" Text="Output PDF Path:" VerticalAlignment="Center" Foreground="#FF000000" Margin="10,0,0,0"/>
+        <!-- Text box for displaying output PDF path -->
         <TextBox x:Name="OutputPdfPathTextBox" Grid.Row="3" Margin="140,0,0,0" VerticalAlignment="Center" IsReadOnly="True"/>
 
+        <!-- Button for selecting output folder -->
         <Button Content=" Select Output Folder " 
                 Click="SelectOutputFolder_Click" 
                 Grid.Row="4" 
@@ -70,6 +81,7 @@
                 MouseEnter="Button_MouseEnter"
                 MouseLeave="Button_MouseLeave"/>
 
+        <!-- Button for converting images to PDF -->
         <Button Content=" Convert to PDF " 
                 Click="ConvertToPdf_Click" 
                 Grid.Row="5" 
@@ -80,7 +92,7 @@
                 BorderThickness="1"
                 FontSize="14"
                 FontWeight="SemiBold"
-                Style="{StaticResource CustomButtonStyle}"
+                Style="{StaticResource CustomButtonStyle}" 
                 Margin="0,20,0,0" 
                 MouseEnter="Button_MouseEnter"
                 MouseLeave="Button_MouseLeave"/>
