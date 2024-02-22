@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -59,8 +60,13 @@ namespace ImageToPdfConverterWPF
                 return;
             }
 
-            // Get all PNG files in the selected input folder
-            string[] imageFiles = Directory.GetFiles(inputFolder, "*.png");
+            // Array of supported image file extensions
+            string[] imageExtensions = { "*.jpg", "*.jpeg", "*.png", "*.gif", "*.bmp" };
+
+            // Get all image files in the selected input folder
+            string[] imageFiles = imageExtensions
+                .SelectMany(ext => Directory.GetFiles(inputFolder, ext))
+                .ToArray();
 
             using (PdfDocument pdf = new PdfDocument()) // Create a new PDF document
             {
@@ -69,13 +75,13 @@ namespace ImageToPdfConverterWPF
                     using (Bitmap bitmap = new Bitmap(imageFile)) // Open the image file
                     {
                         PdfPage page = pdf.AddPage(); // Add a new page to the PDF document
-                        // Set page dimensions based on image dimensions and resolution
+                                                      // Set page dimensions based on image dimensions and resolution
                         page.Width = bitmap.Width * 72 / bitmap.HorizontalResolution;
                         page.Height = bitmap.Height * 72 / bitmap.VerticalResolution;
                         XGraphics gfx = XGraphics.FromPdfPage(page); // Create graphics context for the page
 
                         XImage xImage = XImage.FromFile(imageFile); // Load the image file
-                        // Draw the image on the PDF page
+                                                                    // Draw the image on the PDF page
                         gfx.DrawImage(xImage, 0, 0, page.Width, page.Height);
                     }
                 }
@@ -84,6 +90,8 @@ namespace ImageToPdfConverterWPF
 
             MessageBox.Show("PDF conversion done successfully !.", "Information", MessageBoxButton.OK, MessageBoxImage.Information); // Display success message
         }
+
+
 
         // Event handler for mouse entering button
         private void Button_MouseEnter(object sender, MouseEventArgs e)
